@@ -1,0 +1,4 @@
+#Ignore downloaded and generated data files
+.json
+.csv
+.mp4
