@@ -51,7 +51,7 @@ foreach ($quarter in $quarters) {
     }
 
     New-AzCostManagementExport `
-    -Name "Export$($quarter.name)2" `
+    -Name "Export$($quarter.name)" `
     -DefinitionType  "Usage" `
     -Scope "/subscriptions/$reportSubscriptionId" `
     -DestinationResourceId  "/subscriptions/$storageSubscriptionId/resourceGroups/$storageResourceGroup/providers/Microsoft.Storage/storageAccounts/$storageAccountName" `
@@ -67,7 +67,7 @@ foreach ($quarter in $quarters) {
 #Now request the export 
 foreach ($quarter in $quarters) {
     Invoke-AzCostManagementExecuteExport `
-        -ExportName "Export$($quarter.name)2" `
+        -ExportName "Export$($quarter.name)" `
        -Scope "/subscriptions/$reportSubscriptionId"
 }
 
